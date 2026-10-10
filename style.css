@@ -54,6 +54,7 @@ button, select { cursor: pointer; }
 h1 { margin: 0 0 16px; color: var(--navy); font-size: clamp(2.45rem, 2.02rem + 1.55vw, 3.45rem); line-height: 1.04; font-weight: 700; letter-spacing: -.035em; }
 h1 span { display: inline-block; margin-left: .22em; color: var(--muted); font-size: .57em; font-weight: 500; letter-spacing: 0; }
 .role-line { margin: 0 0 22px; color: var(--orange-dark); font-size: 1.02rem; font-weight: 700; }
+.motto { margin: -10px 0 18px; color: var(--muted); font-size: .95rem; font-style: italic; letter-spacing: .01em; }
 p { margin: 0 0 13px; }
 .bio > p:not(.role-line) { max-width: 770px; }
 .portrait { display: block; width: 100%; height: clamp(265px, 27vw, 330px); object-fit: cover; object-position: center 28%; border: 4px solid var(--white); border-radius: 14px; box-shadow: 14px 14px 0 #e7eef3, 0 0 0 1px var(--line); }
@@ -94,6 +95,7 @@ h3 a { color: inherit; }
 .experience { display: grid; grid-template-columns: 96px minmax(0, 1fr) auto; gap: 22px; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--line); }
 .logo-link { width: 88px; height: 58px; display: flex; justify-content: center; align-items: center; padding: 4px; background: var(--white); border-radius: 4px; }
 .experience img { display: block; width: auto; height: auto; max-width: 82px; max-height: 50px; object-fit: contain; }
+.experience img.nstc-logo { max-width: 88px; }
 .experience p { margin: 0; }
 .experience .detail { margin-top: 4px; color: #41515d; }
 .experience > .date { align-self: start; white-space: nowrap; text-align: right; }
@@ -161,6 +163,7 @@ footer p { margin: 10px 0 0; text-align: right; }
   .experience { grid-template-columns: 72px minmax(0, 1fr); gap: 16px; align-items: start; }
   .logo-link { width: 64px; height: 52px; grid-row: 1 / 3; }
   .experience img { max-width: 56px; max-height: 42px; }
+  .experience img.nstc-logo { max-width: 60px; }
   .experience > .date { grid-column: 2; margin-top: 3px; text-align: left; }
 }
 
@@ -184,6 +187,7 @@ footer p { margin: 10px 0 0; text-align: right; }
   .experience { grid-template-columns: 70px minmax(0, 1fr); gap: 12px; padding: 16px 0; }
   .logo-link { width: 64px; height: 48px; padding: 3px; }
   .experience img { max-width: 58px; max-height: 40px; }
+  .experience img.nstc-logo { max-width: 60px; }
   .service-list li { grid-template-columns: 20px minmax(0, 1fr); gap: 2px 12px; min-height: 0; padding: 16px 0; }
   .service-item > .date { grid-column: 2; grid-row: 1; padding: 0; text-align: left; }
   .service-axis { grid-column: 1; grid-row: 1 / 3; }
