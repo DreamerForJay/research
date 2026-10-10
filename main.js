@@ -5,7 +5,38 @@
   const menuButton = document.querySelector("#menu-toggle");
   const menu = document.querySelector("#site-menu");
   const siteHeader = document.querySelector(".site-header");
+  const motto = document.querySelector(".motto");
+  const mottoText = document.querySelector("#motto-text");
   let language = "en";
+
+  function animateMotto() {
+    if (!motto || !mottoText) return;
+
+    const text = motto.getAttribute("aria-label") || mottoText.textContent;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      mottoText.textContent = text;
+      motto.classList.add("is-complete");
+      return;
+    }
+
+    mottoText.textContent = "";
+    let index = 0;
+
+    const typeNext = () => {
+      index += 1;
+      mottoText.textContent = text.slice(0, index);
+
+      if (index < text.length) {
+        const delay = text[index - 1] === "." ? 180 : 55;
+        window.setTimeout(typeNext, delay);
+        return;
+      }
+
+      window.setTimeout(() => motto.classList.add("is-complete"), 1200);
+    };
+
+    window.setTimeout(typeNext, 350);
+  }
 
   function renderLanguage() {
     document.documentElement.lang = language === "en" ? "en" : "zh-Hant";
@@ -27,6 +58,7 @@
   }
 
   renderLanguage();
+  animateMotto();
   languageButton.hidden = false;
 
   languageButton.addEventListener("click", () => {
