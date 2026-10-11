@@ -1,0 +1,26 @@
+{
+  "id": "/research/",
+  "name": "Chieh-Lun Yang · Research Profile",
+  "short_name": "Chieh-Lun Yang",
+  "description": "Academic profile and research work of Chieh-Lun Yang.",
+  "lang": "en",
+  "start_url": "/research/",
+  "scope": "/research/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#12324a",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

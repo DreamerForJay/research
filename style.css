@@ -185,7 +185,7 @@ footer p { margin: 10px 0 0; text-align: right; }
   .bio > p:not(.role-line):first-of-type { margin-top: 12px; }
   .links { flex-wrap: nowrap; justify-content: flex-start; gap: 0; width: 100%; font-size: clamp(.72rem, 3.25vw, .85rem); letter-spacing: -.015em; }
   .links a { white-space: nowrap; }
-  .links a + a::before { margin-right: clamp(4px, 1vw, 8px); margin-left: clamp(4px, 1vw, 8px); }
+  .links a + a::before { margin-right: clamp(7px, 2vw, 9px); margin-left: clamp(7px, 2vw, 9px); }
   .link-label-full { display: none; }
   .link-label-short { display: inline; }
   section { margin-top: 3.4rem; }
