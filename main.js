@@ -15,12 +15,21 @@
     const text = motto.getAttribute("aria-label") || mottoText.textContent;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       mottoText.textContent = text;
-      motto.classList.add("is-complete");
       return;
     }
 
     mottoText.textContent = "";
     let index = 0;
+
+    const eraseNext = () => {
+      index -= 1;
+      mottoText.textContent = text.slice(0, index);
+      if (index > 0) {
+        window.setTimeout(eraseNext, 32);
+      } else {
+        window.setTimeout(typeNext, 450);
+      }
+    };
 
     const typeNext = () => {
       index += 1;
@@ -29,10 +38,9 @@
       if (index < text.length) {
         const delay = text[index - 1] === "." ? 180 : 55;
         window.setTimeout(typeNext, delay);
-        return;
+      } else {
+        window.setTimeout(eraseNext, 1400);
       }
-
-      window.setTimeout(() => motto.classList.add("is-complete"), 1200);
     };
 
     window.setTimeout(typeNext, 350);
