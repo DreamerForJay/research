@@ -185,7 +185,7 @@ footer p { margin: 10px 0 0; text-align: right; }
   .bio > p:not(.role-line):first-of-type { margin-top: 12px; }
   .links { flex-wrap: nowrap; justify-content: flex-start; gap: 0; width: 100%; font-size: 1rem; letter-spacing: 0; }
   .links a { white-space: nowrap; }
-  .links a + a::before { margin-right: clamp(2.5px, .8vw, 4.5px); margin-left: clamp(2.5px, .8vw, 4.5px); }
+  .links a + a::before { margin-right: 6px; margin-left: 6px; }
   .link-label-full { display: none; }
   .link-label-short { display: inline; }
   section { margin-top: 3.4rem; }
@@ -219,6 +219,10 @@ footer p { margin: 10px 0 0; text-align: right; }
   .profile { grid-template-columns: minmax(0, 1fr) 96px; gap: 14px; }
   .portrait { height: 128px; }
   .news-list li { grid-template-columns: 1fr; gap: 1px; }
+}
+
+@media (max-width: 350px) {
+  .links a + a::before { margin-right: 2.5px; margin-left: 2.5px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
