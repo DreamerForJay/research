@@ -149,10 +149,10 @@ body.lightbox-open { overflow: hidden; }
 .lightbox-toolbar p { margin: 0; overflow: hidden; font-size: .92rem; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
 .lightbox-close { width: 36px; height: 36px; flex: 0 0 auto; display: grid; place-items: center; padding: 0; color: #fff; background: transparent; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; font-size: 1.65rem; line-height: 1; }
 .lightbox-close:hover { color: #fff; background: rgba(255,255,255,.12); }
-.lightbox-stage { height: calc(100% - 94px); display: grid; place-items: center; overflow: hidden; overscroll-behavior: contain; background: #07131c; touch-action: pan-x pan-y pinch-zoom; }
-.lightbox-stage img { display: block; width: 100%; max-width: 100%; height: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in; user-select: none; }
+.lightbox-stage { position: relative; height: calc(100% - 94px); overflow: hidden; overscroll-behavior: contain; background: #07131c; touch-action: pan-x pan-y pinch-zoom; }
+.lightbox-stage img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; cursor: zoom-in; user-select: none; }
 .lightbox-stage.is-zoomed { display: block; overflow: auto; }
-.lightbox-stage.is-zoomed img { width: auto; max-width: none; height: auto; max-height: none; object-fit: initial; cursor: zoom-out; }
+.lightbox-stage.is-zoomed img { position: static; width: auto; max-width: none; height: auto; max-height: none; object-fit: initial; cursor: zoom-out; }
 .lightbox-help { height: 40px; margin: 0; padding: 8px 16px; color: rgba(255,255,255,.72); background: #0d2130; font-size: .78rem; text-align: center; }
 
 footer { margin-top: clamp(3.5rem, 7vw, 5.5rem); padding: 24px 0 36px; border-top: 3px solid var(--navy); color: var(--muted); font-size: .84rem; }
