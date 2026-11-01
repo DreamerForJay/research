@@ -7,6 +7,12 @@
   const siteHeader = document.querySelector(".site-header");
   const motto = document.querySelector(".motto");
   const mottoText = document.querySelector("#motto-text");
+  const lightbox = document.querySelector("#media-lightbox");
+  const lightboxStage = lightbox?.querySelector(".lightbox-stage");
+  const lightboxImage = document.querySelector("#lightbox-image");
+  const lightboxCaption = document.querySelector("#lightbox-caption");
+  const lightboxClose = lightbox?.querySelector(".lightbox-close");
+  let lightboxTrigger = null;
   let language = "en";
 
   function animateMotto() {
@@ -68,6 +74,47 @@
   renderLanguage();
   animateMotto();
   languageButton.hidden = false;
+
+  function openLightbox(trigger) {
+    if (!lightbox || !lightboxImage || !lightboxCaption || !trigger.dataset.lightboxSrc) return;
+    lightboxTrigger = trigger;
+    lightboxImage.src = trigger.dataset.lightboxSrc;
+    lightboxImage.alt = trigger.querySelector("img")?.alt || trigger.dataset.lightboxCaptionEn || "Enlarged media";
+    lightboxCaption.textContent = trigger.dataset[`lightboxCaption${language === "en" ? "En" : "Zh"}`]
+      || trigger.dataset.lightboxCaptionEn
+      || lightboxImage.alt;
+    lightboxStage?.classList.remove("is-zoomed");
+    document.body.classList.add("lightbox-open");
+    lightbox.showModal();
+  }
+
+  document.querySelectorAll("[data-lightbox-src]").forEach((trigger) => {
+    trigger.addEventListener("click", (event) => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      openLightbox(trigger);
+    });
+    if (trigger.getAttribute("role") === "button") {
+      trigger.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        event.preventDefault();
+        openLightbox(trigger);
+      });
+    }
+  });
+
+  lightboxImage?.addEventListener("click", () => lightboxStage?.classList.toggle("is-zoomed"));
+  lightboxClose?.addEventListener("click", () => lightbox.close());
+  lightbox?.addEventListener("click", (event) => {
+    if (event.target === lightbox) lightbox.close();
+  });
+  lightbox?.addEventListener("close", () => {
+    document.body.classList.remove("lightbox-open");
+    lightboxStage?.classList.remove("is-zoomed");
+    lightboxImage.removeAttribute("src");
+    lightboxTrigger?.focus({ preventScroll: true });
+    lightboxTrigger = null;
+  });
 
   languageButton.addEventListener("click", () => {
     language = language === "en" ? "zh" : "en";

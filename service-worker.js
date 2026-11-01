@@ -1,9 +1,9 @@
-const CACHE_NAME = "research-profile-v6";
+const CACHE_NAME = "research-profile-v7";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./style.css?v=20261011-10",
-  "./main.js?v=20261011-3",
+  "./style.css?v=20261101-1",
+  "./main.js?v=20261101-1",
   "./manifest.webmanifest",
   "./assets/favicon.svg",
   "./assets/icons/icon-192.png",
@@ -13,6 +13,7 @@ const APP_SHELL = [
   "./assets/portrait.jpg",
   "./assets/research/gemo3d-preview.jpg",
   "./assets/research/dfds-architecture.png",
+  "./assets/certificates/google-digital-talent-ai-workplace-essentials-en.png",
   "./assets/logos/104.jpg",
   "./assets/logos/csie-association.webp",
   "./assets/logos/foxconn.jpg",
