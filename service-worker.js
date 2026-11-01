@@ -1,8 +1,8 @@
-const CACHE_NAME = "research-profile-v7";
+const CACHE_NAME = "research-profile-v8";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./style.css?v=20261101-1",
+  "./style.css?v=20261101-2",
   "./main.js?v=20261101-1",
   "./manifest.webmanifest",
   "./assets/favicon.svg",
